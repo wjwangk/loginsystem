@@ -4,6 +4,8 @@
  */
 package com.xiaowenzi.example.demo.service;
 
+import org.springframework.ui.Model;
+
 /**
  *
  * @author mj
@@ -13,7 +15,7 @@ public interface HelloWorldService {
 
     String sayHello(String name, Integer age);
 
-    String login(String userName, String passWord);
+    String login(String userName, String passWord,Model model);
 
     String login1(String usname,String pwd);
 }

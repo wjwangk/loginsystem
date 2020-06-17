@@ -1,0 +1,320 @@
+html,body{
+	height: 100%;
+	background: #f6f6f6;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	color: #333;
+	font-size: 14px;
+	-webkit-overflow-scrolling: touch;
+}
+
+div,p,h1,h2,h3,h4,ul,ol,li,dl,dt,dd{
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+ul,ol,dl{
+	list-style: none;
+}
+
+img{vertical-align: middle;}
+/*========== scroll bar css =============*/
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    background: rgba(231, 232, 233, 1);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(0, 0, 0, 0);
+}
+
+/*========== scroll bar css end =============*/
+.ivu-table-body::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+.ivu-table-body::-webkit-scrollbar-thumb {
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+}
+/*========== scroll bar css end =============*/
+.ivu-notice .ivu-notice-notice{ overflow: initial; }
+
+.clear:after{
+	content:".";
+    clear:both;
+    display:block;
+    height:0;
+    overflow:hidden;
+    visibility:hidden;
+}
+
+.container{
+	height: 100%;
+}
+.body-gary{background: #F2F2F2; position: relative;}
+
+/* 页面跳转基础动效 向左偏移20px */
+.slide-enter,.slide-leave-to{
+  opacity: 0;
+  transform: translateX(20px);
+}
+.slide-enter-active,.slide-leave-active{
+  transition: all 0.5s;
+}
+
+/* 页面跳转基础动效 向下偏移20px */
+.slide-to-top-enter,.slide-to-top-leave-to{
+  opacity: 0;
+  transform: translateY(20px);
+}
+.slide-to-top-enter-active,.slide-to-top-leave-active{
+  transition: all 0.5s;
+}
+
+.page{
+  background: #fff; border-radius: 4px; position: relative; padding-bottom: 15px;
+  
+  .search-card{
+    padding: 15px 18px;
+    .ivu-form{
+      .ivu-form-item{
+        margin-bottom: 0;
+        .ivu-form-item-label{padding-bottom: 5px; font-size: 12px;}
+      }
+    }
+    
+  }
+}
+.ivu-table {
+    .ivu-icon{
+        font-size: 16px;
+    } 
+}
+
+.-m-top1{margin-top: 10px;}
+.-m-top2{margin-top: 20px;}
+.-m-top3{margin-top: 30px;}
+
+.-m-left1{margin-left: 10px;}
+.-m-left2{margin-left: 20px;}
+.-m-left3{margin-left: 30px;}
+.-m-right1{margin-right: 10px;}
+.-m-right2{margin-right: 20px;}
+.-m-right3{margin-right: 30px;}
+
+.-m-bottom1{margin-bottom: 10px;}
+.-m-bottom2{margin-bottom: 20px;}
+.-m-bottom3{margin-bottom: 30px;}
+
+.pad-bottom5{padding-bottom: 50px;}
+
+.m-l-r{
+  margin:  0 10px;
+}
+.-fl{float: left;}
+.-fr{float: right;}
+
+.flex-wrap{
+  display: flex;
+  align-items: center;
+}
+
+.align-center{
+    text-align: center;
+}
+.align-right{
+    text-align: right;
+}
+.ivu-card-body {
+  
+  // .ivu-form-item{
+  //   margin-bottom: 10px;
+  // }
+  .ivu-form .ivu-form-item-label{
+    padding-right: 0;
+  }
+  .ivu-btn-text{
+    color: #1E93FD;
+  }
+}
+.btn-reset{
+border: 1px solid #B5BAC5;
+border-radius: 4px;
+color: #A0A7B5;
+}
+.ivu-select-selection{
+  background: #FAFBFD;
+  border: 1px solid #DBE4ED;
+}
+.info-wrap{
+    label{
+        display: inline-block;
+        width: 80px;
+        
+    }
+}
+.info-primary-wrap{
+    label{
+        color: #6B7282;
+    }
+}
+
+.ivu-drawer-mask,.ivu-drawer-wrap,.ivu-drawer{
+    z-index: 1061;
+  height: calc(100% - 50px);
+  top: 50px;
+}
+.ivu-drawer-content{
+  background: #F3F5F9;
+}
+
+.ivu-upload.ivu-upload-drag{
+  padding: 15px;
+  height: 200px;
+
+}
+
+.ivu-upload.ivu-upload-drag img{
+    width: auto!important;
+  max-width: 100%;
+  max-height: 100%;
+}
+.ivu-select{
+  min-width: 120px;
+}
+.ivu-card{
+    border-radius: 8px;
+}
+.ivu-tabs-nav {
+    .ivu-tabs-tab-active{
+        font-weight: bold;
+    }
+}
+// 气泡提示 
+.poptip-dark {
+    .ivu-poptip-inner{
+        color: #fff;
+        background: #595E6A;
+        line-height: 28px;
+    }
+    .ivu-poptip-popper[x-placement^=bottom] .ivu-poptip-arrow:after{
+        border-bottom-color: #595E6A;
+    }
+}
+.ivu-poptip-rel{
+    cursor: pointer;
+}
+.ivu-poptip-popper{
+    text-align: left;
+    .ivu-poptip-title{
+        font-weight: bold;
+        font-size: 16px;
+    }
+}
+//开启confirm 确认框模式
+.poptip-confirm-wrap{
+	.ivu-form-item{
+		margin-bottom: 16px;
+
+    }
+    .ivu-poptip-title{
+        padding: 16px 16px 1px;
+        .ivu-form-item{
+            margin-bottom: 24px;
+
+        }
+    }
+	.ivu-poptip-body-content {
+		overflow: visible;
+	}
+	.ivu-poptip-body-message{
+		padding: 0;
+	}
+	.ivu-icon.ivu-icon-ios-help-circle{
+		display: none;
+	}
+	.ivu-input-wrapper,
+    .ivu-select,
+    .ivu-cascader-rel{
+		width: 170px;
+    }
+    .ivu-select-dropdown{
+		min-width: max-content;
+    }
+    .ivu-poptip-footer{
+        text-align: right;
+    }
+    .ivu-form-item-error-tip{
+        left: 80px;
+    }
+}
+// disabled 样式
+.ivu-input[disabled], 
+fieldset[disabled] .ivu-input,
+.ivu-select-disabled .ivu-select-selection,
+.ivu-input-number-disabled .ivu-input-number-input{
+    color: #515a6e;
+    background-color: #FAFBFD;
+}
+.ivu-date-picker,.ivu-cascader{
+    min-width: 100%;
+}
+// from 中 的 input 没有 border
+.from-no-border {
+    .ivu-form-item{
+        margin-bottom: 0;
+    }
+    .ivu-input{
+        
+        border: none;
+        background: transparent;
+    }
+    .from-border{
+        .ivu-input{
+            border: 1px solid #DBE4ED;
+        }
+        .ivu-form-item-error-tip{
+            position: relative;
+        }
+    }
+    .from-border + .ivu-form-item-error-tip{
+        position: relative;
+    }
+}
+.ivu-table-wrapper,
+.ivu-table{
+    overflow: visible;
+    span{
+        // word-break: keep-all;
+        // word-wrap: break-word; // 只对英文起作用，以单词作为换行依据。
+        // white-space: pre-wrap; //只对中文起作用，强制换行。
+        // text-justify:inter-ideograph; 
+    }
+}
+.ivu-table  .ivu-table-cell-with-expand{
+    height: auto;
+}
+.table-wrapper{
+    .ivu-table{
+        background: transparent;
+    }
+    .ivu-table:before{ height: 0; }
+    .ivu-table th{
+      background: #fff; padding-top: 0; color: #444; font-size: 13px; position: relative; border-bottom: solid #dddddd 1px;
+    }
+} 

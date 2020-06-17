@@ -4,14 +4,18 @@
  */
 package com.xiaowenzi.example.demo.controller;
 
+import antlr.StringUtils;
+import com.sun.org.glassfish.gmbal.ParameterNames;
 import com.xiaowenzi.example.demo.service.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
@@ -28,7 +32,7 @@ import java.util.Map;
  */
 
 @Controller
-@RequestMapping("/wj")  //作用于类上，则为类中所有方法的请求头（父路径），作为请求地址映射
+//@RequestMapping("/wj")  //作用于类上，则为类中所有方法的请求头（父路径），作为请求地址映射
 public class HelloWorldController {
 
     /**@Autowired 注解的作用是自动匹配，它可以对类成员变量、方法及构造函数进行标注，完成自动装配的工作
@@ -57,14 +61,32 @@ public class HelloWorldController {
      */
     public String success(Map<String,Object> map){
         map.put("hello","你好");
-        return "success";
-    }    //
+       return "success";
+     //   return "backstage";
+    }
 
 
-    @RequestMapping("/login")
+    @RequestMapping("/login1")
     @ResponseBody
     public String indexPage(String name, String pwd){
         return helloWorldService.login1(name,pwd);
+    }
+
+    @RequestMapping("/login")
+    public String login(@RequestParam("name") String name,
+                        @RequestParam("pwd") String pwd,
+                        Model model, HttpSession session){
+        if( name.length()!=0 && "123456".equals(pwd)){
+            session.setAttribute("loginUser",name);
+            return "backstage";
+
+        }else
+
+            model.addAttribute("用户名或密码错误");
+            model.addAttribute("msg","用户名或密码错误");
+            return "success";
+
+
     }
 
 }

@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>系统</title>
     <style>
         #name {
             color: brown;
         }
     </style>
 </head>
-<body>
-<form action="/wj/login" method="get">
-    用户名：<input type="text" id="name" name="name" value=""/><br>
-    密码：<input type="text" id="pwd" name="pwd" value=""/><br>
+
+
+<link th:href="@{./css/backstage.076e4d74.css}" rel=stylesheet><body>
+
+<form action="/login" method="get">
+    <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+    用户名：<input type="text"  name="name" value=""/><br>
+    密码：<input type="text"  name="pwd" value=""/><br>
     <input type="submit" value="登录" />
 </form>
+<script type=text/javascript th:src="@{./js/backstage.076e4d74df03c5f00e38.js}"></script>
 </body>
+
 </html>

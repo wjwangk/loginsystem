@@ -6,6 +6,7 @@ package com.xiaowenzi.example.demo.service.impl;
 
 import com.xiaowenzi.example.demo.service.HelloWorldService;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +36,7 @@ public class HelloWorldServiceImpl implements HelloWorldService {
     }
 
     @Override
-    public String login(String name, String pwd) {
+    public String login(String name, String pwd, Model model) {
         String result = "用户名或密码错误";
         if (userMap.containsKey(name) && userMap.get(name).equals(pwd)) {
             result = "恭喜" + name + "登陆成功";
